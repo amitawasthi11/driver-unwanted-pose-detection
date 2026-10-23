@@ -448,3 +448,7 @@ The current system has not been validated for real-world driving or safety-criti
 ## Author
 
 Developed as a Python-based computer vision project focused on driver posture monitoring, body landmark detection, and future extensions for facial behavior analysis.
+
+/////   for running video //////
+
+python driver_monitor.py --source "C:\Python\driver-unwanted-pose\test_video.mp4"

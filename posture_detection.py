@@ -4,6 +4,8 @@ import mediapipe as mp
 import math
 import time
 
+
+
 MODEL_PATH = "pose_landmarker_full.task"
 CAMERA_ID = 0
 

@@ -3,6 +3,7 @@ import csv
 import math
 import os
 import time
+import winsound
 from datetime import datetime
 
 import cv2
@@ -186,6 +187,9 @@ def calculate_mar(landmarks, width, height):
 # --------------------------------------------------
 # MAIN APPLICATION
 # --------------------------------------------------
+def play_alert_sound():
+      winsound.Beep(1000, 1000)
+
 
 def main():
     global LOG_FILE
@@ -325,6 +329,7 @@ def main():
                                 )
                                 posture_color = (0, 0, 255)
                                 if not lean_logged:
+                                    play_alert_sound()
                                     posture_event_pending = True
                                     lean_logged = True
                             else:
@@ -360,6 +365,7 @@ def main():
                                 eye_status = f"ALERT: prolonged eye closure (EAR {ear:.3f})"
                                 eye_color = (0, 0, 255)
                                 if not eye_closed_logged:
+                                    play_alert_sound()
                                     log_event("EYE_CLOSED", ear, mar, angle)
                                     eye_closed_logged = True
                             else:
